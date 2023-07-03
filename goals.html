@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Goals</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: linear-gradient(to right, rgb(230, 184, 228), rgb(179, 179, 219));
+            height: 100%;
+            width: 100%;
+        }
+
+        .main {
+            background: linear-gradient(to right, rgb(230, 184, 228), rgb(179, 179, 219));
+            width: 70%;
+            margin: auto;
+            display: flex;
+            height: 90%;
+            border-style: none ridge ridge ridge;
+        }
+
+        .left {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+
+        }
+
+        .button-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .right {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .right .box {
+            display: none;
+
+        }
+
+        .button-list .buttons {
+            width: 40%;
+            margin: 1.30rem;
+            padding: 7px;
+            background-color: rgb(170, 138, 233);
+            border-radius: 4px;
+
+        }
+
+        li {
+            list-style: none;
+
+        }
+
+        .box {
+            background: linear-gradient(to right, rgb(230, 184, 228), rgb(179, 179, 219));
+            border-style: groove;
+            border-width: 6px;
+            text-align: left;
+            padding: 2.6rem;
+            margin-top: 200px;
+
+            transition-duration: 3s;
+            transition-timing-function: ease-out;
+            border-radius: 10px 0 0 20px;
+
+        }
+
+        .box li {
+            list-style: square;
+        }
+
+        nav {
+            border-style: double none;
+            margin: 1px 0px 15px 0px;
+            text-align: center;
+            padding: 3px;
+
+        }
+
+        .slide-In {
+            position: relative;
+            left: -100;
+            animation: slide-In 3s ease-in-out;
+            font-weight: bolder;
+            color: rgb(199, 102, 153);
+                }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+
+        }
+
+        @keyframes slide-In {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+
+            0% {
+                left: -100%;
+                color: rgb(218, 234, 234);
+            }
+
+            100% {
+                left: 0;
+                color: rgb(199, 102, 153);
+            }
+
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .box {
+            list-style-type: none;
+            /* padding: 0; */
+        }
+
+        .goals {
+            opacity: 0;
+            animation: fade-in 1s ease-in-out forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <h1 class="slide-In fadeIn">
+            WELCOME TO MY ARYA GOALS
+        </h1>
+    </nav>
+    <div class="main">
+
+        <div class="left">
+            <li class="button-list">
+                <button class="buttons" id="btn1">
+                    2024-25
+                </button>
+                <button class="buttons" id="btn2">
+                    2026-27
+                </button>
+                <button class="buttons" id="btn3">
+                    2029-30
+                </button>
+                <button class="buttons" id="btn4">
+                    2030-35
+                </button>
+                <button class="buttons" id="btn5">
+                    2035-40
+                </button>
+                <button class="buttons" id="btn6">
+                    2040-45
+                </button>
+                <button class="buttons" id="btn7">
+                    2065
+                </button>
+            </li>
+        </div>
+        <div class="right">
+            <section class="box" id="b1">
+                <li class="goals">First to get a job</li>
+                <li class="goals">Get a sports bike on my own</li>
+            </section>
+            <section class="box" id="b2">
+                <li class="goals">
+                    Finish the building of my home sweet home
+                </li>
+            </section>
+            <section class="box" id="b3">
+                <li class="goals">
+                    Gifting a car to my parents
+                </li>
+                <li class="goals">
+                    A long trip with my family members
+                </li>
+            </section>
+            <section class="box" id="b4">
+                <li class="goals">
+                    I have to learn archery, shooting, swimming.
+                </li>
+                <li>
+                    One More bike
+                </li>
+            </section>
+            <section class="box" id="b5">
+                <li class="goals">
+                    Building a smart home with my own designs
+                </li>
+            </section>
+            <section class="box" id="b6">
+                <li class="goals">
+                    Expanding my single business to multi business
+                </li>
+            </section>
+            <section class="box" id="b7">
+                <li class="goals">
+                Chalo ab, budhe aadmi ko preshan mat kro thak gaya hai soch soch kr
+            </li>
+
+            </section>
+        </div>
+    </div>
+
+</body>
+
+
+<script>
+    // b1
+    if (document.getElementById("btn1")) {
+        let target = document.getElementById("b1");
+        let btn = document.getElementById("btn1");
+        btn.onclick = function () {
+            if (target.style.display !== "none") {
+                target.style.display = "none";
+
+                document.getElementById("b2").style.display = "none";
+                document.getElementById("b3").style.display = "none";
+                document.getElementById("b4").style.display = "none";
+                document.getElementById("b5").style.display = "none";
+                document.getElementById("b6").style.display = "none";
+                document.getElementById("b7").style.display = "none";
+            } else {
+                target.style.display = "block";
+
+
+                document.getElementById("b2").style.display = "none";
+                document.getElementById("b3").style.display = "none";
+                document.getElementById("b4").style.display = "none";
+                document.getElementById("b5").style.display = "none";
+                document.getElementById("b6").style.display = "none";
+                document.getElementById("b7").style.display = "none";
+            }
+        }
+    }
+    // b2
+    if (document.getElementById("btn2")) {
+        let target = document.getElementById("b2");
+        let btn = document.getElementById("btn2");
+        btn.onclick = function () {
+            if (target.style.display !== "none") {
+                target.style.display = "none";
+
+
+                document.getElementById("b1").style.display = "none";
+                document.getElementById("b3").style.display = "none";
+                document.getElementById("b4").style.display = "none";
+                document.getElementById("b5").style.display = "none";
+                document.getElementById("b6").style.display = "none";
+                document.getElementById("b7").style.display = "none";
+            } else {
+                target.style.display = "block";
+
+
+                document.getElementById("b1").style.display = "none";
+                document.getElementById("b3").style.display = "none";
+                document.getElementById("b4").style.display = "none";
+                document.getElementById("b5").style.display = "none";
+                document.getElementById("b6").style.display = "none";
+                document.getElementById("b7").style.display = "none";
+            }
+        }
+    }
+
+    //b3
+    if (document.getElementById("btn3")) {
+        let target = document.getElementById("b3");
+        let btn = document.getElementById("btn3");
+        btn.onclick = function () {
+            if (target.style.display !== "none") {
+                target.style.display = "none";
+
+                document.getElementById("b2").style.display = "none";
+                document.getElementById("b1").style.display = "none";
+                document.getElementById("b4").style.display = "none";
+                document.getElementById("b5").style.display = "none";
+                document.getElementById("b6").style.display = "none";
+                document.getElementById("b7").style.display = "none";
+            } else {
+                target.style.display = "block";
+
+                document.getElementById("b2").style.display = "none";
+                document.getElementById("b1").style.display = "none";
+                document.getElementById("b4").style.display = "none";
+                document.getElementById("b5").style.display = "none";
+                document.getElementById("b6").style.display = "none";
+                document.getElementById("b7").style.display = "none";
+            }
+        }
+    }
+    //b4
+    if (document.getElementById("btn4")) {
+        let target = document.getElementById("b4");
+        let btn = document.getElementById("btn4");
+        btn.onclick = function () {
+            if (target.style.display !== "none") {
+                target.style.display = "none";
+
+                document.getElementById("b2").style.display = "none";
+                document.getElementById("b3").style.display = "none";
+                document.getElementById("b1").style.display = "none";
+                document.getElementById("b5").style.display = "none";
+                document.getElementById("b6").style.display = "none";
+                document.getElementById("b7").style.display = "none";
+            } else {
+                target.style.display = "block";
+
+                document.getElementById("b2").style.display = "none";
+                document.getElementById("b3").style.display = "none";
+                document.getElementById("b1").style.display = "none";
+                document.getElementById("b5").style.display = "none";
+                document.getElementById("b6").style.display = "none";
+                document.getElementById("b7").style.display = "none";
+            }
+        }
+    }
+    // b5
+    if (document.getElementById("btn5")) {
+        let target = document.getElementById("b5");
+        let btn = document.getElementById("btn5");
+        btn.onclick = function () {
+            if (target.style.display !== "none") {
+                target.style.display = "none";
+
+                document.getElementById("b2").style.display = "none";
+                document.getElementById("b3").style.display = "none";
+                document.getElementById("b4").style.display = "none";
+                document.getElementById("b1").style.display = "none";
+                document.getElementById("b6").style.display = "none";
+                document.getElementById("b7").style.display = "none";
+            } else {
+                target.style.display = "block";
+
+                document.getElementById("b2").style.display = "none";
+                document.getElementById("b3").style.display = "none";
+                document.getElementById("b4").style.display = "none";
+                document.getElementById("b1").style.display = "none";
+                document.getElementById("b6").style.display = "none";
+                document.getElementById("b7").style.display = "none";
+            }
+        }
+    }
+    //b6
+    if (document.getElementById("btn6")) {
+        let target = document.getElementById("b6");
+        let btn = document.getElementById("btn6");
+        btn.onclick = function () {
+            if (target.style.display !== "none") {
+                target.style.display = "none";
+
+                document.getElementById("b2").style.display = "none";
+                document.getElementById("b3").style.display = "none";
+                document.getElementById("b4").style.display = "none";
+                document.getElementById("b5").style.display = "none";
+                document.getElementById("b1").style.display = "none";
+                document.getElementById("b7").style.display = "none";
+            } else {
+                target.style.display = "block";
+
+                document.getElementById("b2").style.display = "none";
+                document.getElementById("b3").style.display = "none";
+                document.getElementById("b4").style.display = "none";
+                document.getElementById("b5").style.display = "none";
+                document.getElementById("b1").style.display = "none";
+                document.getElementById("b7").style.display = "none";
+            }
+        }
+    }
+    // b7
+    if (document.getElementById("btn7")) {
+        let target = document.getElementById("b7");
+        let btn = document.getElementById("btn7");
+        btn.onclick = function () {
+            if (target.style.display !== "none") {
+                target.style.display = "none";
+
+                document.getElementById("b2").style.display = "none";
+                document.getElementById("b3").style.display = "none";
+                document.getElementById("b4").style.display = "none";
+                document.getElementById("b5").style.display = "none";
+                document.getElementById("b6").style.display = "none";
+                document.getElementById("b1").style.display = "none";
+            } else {
+                target.style.display = "block";
+
+                document.getElementById("b2").style.display = "none";
+                document.getElementById("b3").style.display = "none";
+                document.getElementById("b4").style.display = "none";
+                document.getElementById("b5").style.display = "none";
+                document.getElementById("b6").style.display = "none";
+                document.getElementById("b1").style.display = "none";
+            }
+        }
+    }
+
+
+</script>
+
+</html>
